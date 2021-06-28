@@ -10,7 +10,6 @@
       "noEmit": true,
       "strict": true,
       "target": "esnext",
-      "prettier.bracketSpacing": true,
     },
     "exclude": [
       "node_modules",
