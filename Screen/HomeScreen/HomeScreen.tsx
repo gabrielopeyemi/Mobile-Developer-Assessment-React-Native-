@@ -1,19 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Alert, Text, View} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Button from '../../components/Button/Button';
-import {
-  BottomTap,
-  Container,
-  FooterTab,
-  Paragraph,
-  Title,
-  IconDiv,
-  TopView,
-} from './HomeScreen.styles';
+import {Text} from 'react-native';
+import CardSection from '../../components/CardSection/CardSection';
+import {Container, TopView} from './HomeScreen.styles';
 
 function HomeScreen() {
+  const paragraphText: string =
+    'When placing an order, select the option "Contactless delivery" and the courier will leave your order at the door';
+  const titleText: string = 'Non-Contact Deliveries';
   return (
     <Container>
       <TopView>
@@ -27,29 +21,7 @@ function HomeScreen() {
           D
         </Text>
       </TopView>
-      <FooterTab>
-        <BottomTap>
-          <IconDiv>
-            <Icon name="rocket" size={30} color="#900" />
-          </IconDiv>
-          <Title>Non-Contact Deliveries</Title>
-          <Paragraph>
-            When placing an order, select the option "Contactless delivery" and
-            the courier will leave your order at the door
-          </Paragraph>
-          <Button
-            block
-            onPress={() => Alert.alert('You just ordered!')}
-            textColor="#fff">
-            ORDER NOW
-          </Button>
-          <Button
-            onPress={() => Alert.alert('You just Dismissed')}
-            textColor="#000">
-            DISMISS
-          </Button>
-        </BottomTap>
-      </FooterTab>
+      <CardSection paragraphText={paragraphText} titleText={titleText} />
     </Container>
   );
 }
